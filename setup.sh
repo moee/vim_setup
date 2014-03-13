@@ -11,8 +11,8 @@ fi
 PLUGINDIR=$HOME/.vim/plugin
 
 if [ ! -d $PLUGINDIR ]; then
-    echo "Directory $PLUGINDIR does not exist"
-    exit 1
+    echo "Directory $PLUGINDIR does not exist. Creating it."
+    mkdir $PLUGINDIR
 fi
 
 echo installing mru plugin
