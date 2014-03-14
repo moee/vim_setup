@@ -9,6 +9,7 @@ if [ -z $HOME ]; then
 fi
 
 PLUGINDIR=$HOME/.vim/plugin
+SCRIPTPATH=$( cd $(dirname $0) ; pwd -P )
 
 if [ ! -d $PLUGINDIR ]; then
     echo "Directory $PLUGINDIR does not exist. Creating it."
@@ -28,5 +29,16 @@ fi
 
 (git clone https://github.com/vim-scripts/mru.vim && cp mru.vim/plugin/mru.vim $PLUGINDIR/mru.vim && echo "success") || echo "failed"
 
+echo installing pathogem.vim
+mkdir -p ~/.vim/autoload ~/.vim/bundle 
+curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+
+echo installing SnipMate
+cd ~/.vim/bundle
+git clone https://github.com/tomtom/tlib_vim.git
+git clone https://github.com/MarcWeber/vim-addon-mw-utils.git
+git clone https://github.com/garbas/vim-snipmate.git
+git clone https://github.com/honza/vim-snippets.git
+
 echo installing .vimrc
-cp .vimrc $HOME/.vimrc && echo "success"
+cp $SCRIPTPATH/.vimrc $HOME/.vimrc && echo "success"
