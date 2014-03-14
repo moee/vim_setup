@@ -4,7 +4,7 @@
 # You have been warned.
 
 if [ -z $HOME ]; then
-    echo "$HOME does not exist"
+    echo "\$HOME does not exist"
     exit 1 
 fi
 
@@ -12,7 +12,12 @@ PLUGINDIR=$HOME/.vim/plugin
 
 if [ ! -d $PLUGINDIR ]; then
     echo "Directory $PLUGINDIR does not exist. Creating it."
-    mkdir $PLUGINDIR
+    mkdir -p $PLUGINDIR
+fi
+
+if [ ! -d $PLUGINDIR ]; then
+    echo "Directory $PLUGINDIR still does not exist. Giving up."
+    exit 1
 fi
 
 echo installing mru plugin
