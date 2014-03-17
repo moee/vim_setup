@@ -8,6 +8,7 @@ set expandtab
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType cpp set omnifunc=omni#cpp#complete#Main
 autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab
+autocmd BufRead,BufNewFile *.yml setl sw=2 sts=2 et
 
 if filereadable(".vim.custom")
     so .vim.custom
