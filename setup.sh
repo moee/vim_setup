@@ -40,5 +40,11 @@ git clone https://github.com/MarcWeber/vim-addon-mw-utils.git
 git clone https://github.com/garbas/vim-snipmate.git
 git clone https://github.com/honza/vim-snippets.git
 
+echo installing custom snippets
+cp $SCRIPTPATH/bundle/mysnippets $HOME/.vim/bundle -R && echo "success"
+
+echo installing filetype.vim
+cp $SCRIPTPATH/filetype.vim $HOME/.vim/filetype.vim && echo "success"
+
 echo installing .vimrc
 cp $SCRIPTPATH/.vimrc $HOME/.vimrc && echo "success"
