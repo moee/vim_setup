@@ -8,7 +8,7 @@ error () { echo -e "\e[00;31mError\e[00m"; }
 info () { echo -e "\e[00;34m$1\e[00m"; }
 
 if [ -z $HOME ]; then
-    echo "\$HOME does not exist"
+    error "\$HOME does not exist"
     exit 1 
 fi
 
@@ -16,12 +16,12 @@ PLUGINDIR=$HOME/.vim/plugin
 SCRIPTPATH=$( cd $(dirname $0) ; pwd -P )
 
 if [ ! -d $PLUGINDIR ]; then
-    echo "Directory $PLUGINDIR does not exist. Creating it."
+    info "Directory $PLUGINDIR does not exist. Creating it."
     mkdir -p $PLUGINDIR
 fi
 
 if [ ! -d $PLUGINDIR ]; then
-    echo "Directory $PLUGINDIR still does not exist. Giving up."
+    error "Directory $PLUGINDIR still does not exist. Giving up."
     exit 1
 fi
 
