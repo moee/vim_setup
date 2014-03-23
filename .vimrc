@@ -19,7 +19,8 @@ function! moee:SaveSession()
 endfunction
 
 function! moee:LoadSession()
-    if filereadable("~/.vim/session")
+    let sessionfile = expand("~/.vim/session")
+    if filereadable(sessionfile)
         source ~/.vim/session
         echohl MoreMsg
         echo 'Session loaded'
