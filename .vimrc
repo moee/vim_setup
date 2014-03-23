@@ -19,15 +19,17 @@ function! moee:SaveSession()
 endfunction
 
 function! moee:LoadSession()
-    source ~/.vim/session
-    echohl MoreMsg
-    echo 'Session loaded'
-    echohl None
+    if filereadable("~/.vim/session")
+        source ~/.vim/session
+        echohl MoreMsg
+        echo 'Session loaded'
+        echohl None
+    endif
 endfunction
 
 let mapleader = "\<Space>"
 nnoremap <Leader>s :exec moee:SaveSession()<CR>
-nnoremap <Leader>l :exec moee:LoadSession()<CR>
+nnoremap <Leader>l :exec moee:LoadSession()<CR><CR>
 
 if filereadable(".vim.custom")
     so .vim.custom
