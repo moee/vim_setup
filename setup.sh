@@ -7,6 +7,19 @@ success () { echo -e "\e[00;32mSuccess\e[00m"; }
 error () { echo -e "\e[00;31mError\e[00m"; }
 info () { echo -e "\e[00;34m$1\e[00m"; }
 
+clone_or_pull () {
+    DIRNAME=$(echo $1 | sed "s/https:\/\/github.com\/.*\///g" | sed "s/\.git//g")
+    if [ -d $DIRNAME ]; then
+        info "updating $DIRNAME"
+        cd $DIRNAME
+        git pull
+        cd - > /dev/null
+    else
+        info "cloning $1"
+        git clone $1
+    fi
+}
+
 if [ -z $HOME ]; then
     error "\$HOME does not exist"
     exit 1 
@@ -39,10 +52,10 @@ curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen
 
 info "installing SnipMate"
 cd ~/.vim/bundle
-git clone https://github.com/tomtom/tlib_vim.git
-git clone https://github.com/MarcWeber/vim-addon-mw-utils.git
-git clone https://github.com/garbas/vim-snipmate.git
-git clone https://github.com/honza/vim-snippets.git
+clone_or_pull https://github.com/tomtom/tlib_vim.git
+clone_or_pull https://github.com/MarcWeber/vim-addon-mw-utils.git
+clone_or_pull https://github.com/garbas/vim-snipmate.git
+clone_or_pull https://github.com/honza/vim-snippets.git
 
 info "installing custom snippets"
 cp $SCRIPTPATH/bundle/mysnippets $HOME/.vim/bundle -R && success
