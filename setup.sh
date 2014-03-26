@@ -50,6 +50,14 @@ info "installing pathogem.vim"
 mkdir -p ~/.vim/autoload ~/.vim/bundle 
 curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
+info "installing taglist.vim"
+if [ ! -d ~/.vim/doc ]; then
+    mkdir -p ~/.vim/doc
+fi
+(curl -Sso ~/.vim/plugin/taglist.vim https://raw.github.com/vim-scripts/taglist.vim/master/plugin/taglist.vim && \
+curl -Sso ~/.vim/doc/taglist.txt https://raw.github.com/vim-scripts/taglist.vim/master/doc/taglist.txt && \
+success) || error
+
 info "installing SnipMate"
 cd ~/.vim/bundle
 clone_or_pull https://github.com/tomtom/tlib_vim.git

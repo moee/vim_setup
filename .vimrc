@@ -34,6 +34,7 @@ nnoremap <Leader>l :exec moee:LoadSession()<CR><CR>
 nnoremap <Leader>mf :Mru 
 nnoremap <Leader>mr :Mru<CR> 
 nnoremap <Leader>t :tabe<CR>
+nnoremap <Leader>g :TlistToggle<CR>
 
 if filereadable(".vim.custom")
     so .vim.custom
