@@ -28,9 +28,9 @@ fi
 PLUGINDIR=$HOME/.vim/plugin
 SCRIPTPATH=$( cd $(dirname $0) ; pwd -P )
 
-if [ ! -z $1 ] && [ $1 == "-f" ]; then
-    info "Forcing clean plugin directory"
-    rm -rf $PLUGINDIR
+if [ ! -z $1 ] && [ $1 == "-f" ] && [ -d $HOME/.vim ]; then
+    info "Force removal of ~/.vim directory"
+    rm -rf $HOME/.vim/*
 fi
 
 if [ ! -d $PLUGINDIR ]; then
