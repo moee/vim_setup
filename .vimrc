@@ -34,6 +34,14 @@ nnoremap <Leader>mr :Mru<CR>
 nnoremap <Leader>t :tabe<CR>
 nnoremap <Leader>g :TlistToggle<CR>
 
+nnoremap <Leader>1 1gt<CR>                                                      
+nnoremap <Leader>2 2gt<CR>                                                      
+nnoremap <Leader>3 3gt<CR>                                                      
+nnoremap <Leader>4 4gt<CR>                                                      
+nnoremap <Leader>5 5gt<CR>                                                      
+nnoremap <Leader>6 6gt<CR>                                                      
+nnoremap <Leader>7 7gt<CR>
+
 if filereadable(".vim.custom")
     so .vim.custom
 endif
