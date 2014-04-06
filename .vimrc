@@ -33,6 +33,7 @@ nnoremap <Leader>mf :Mru
 nnoremap <Leader>mr :Mru<CR> 
 nnoremap <Leader>t :tabe<CR>
 nnoremap <Leader>g :TlistToggle<CR>
+nnoremap <Leader>e :Ex<CR>
 
 nnoremap <Leader>1 1gt<CR>                                                      
 nnoremap <Leader>2 2gt<CR>                                                      
