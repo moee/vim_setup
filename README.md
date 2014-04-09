@@ -16,6 +16,12 @@ The vimrc will change the leader key to `<Space>`. The following custom mappings
 * `<Space>mr` Directly open most recently used files list
 * `<Space>t` Open new tab
 * `<Space>g` Toggle taglist
+* `<Space><NUM>` Go to tab <NUM> (works with numbers from 1 to 7)
+* `<Space>q` Quit
+* `<Space>e` Explore Directory
+
+Installation
+------------
 
 **Attention: This will overwrite your .vimrc without asking! You have been warned.**
 
