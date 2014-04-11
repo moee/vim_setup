@@ -31,7 +31,7 @@ nnoremap <Leader>s :exec moee:SaveSession()<CR>
 nnoremap <Leader>l :exec moee:LoadSession()<CR><CR>
 nnoremap <Leader>mf :Mru 
 nnoremap <Leader>mr :Mru<CR> 
-nnoremap <Leader>t :tabe<CR>
+nnoremap <Leader>t :tabe %:p:h<CR>
 nnoremap <Leader>g :TlistToggle<CR>
 nnoremap <Leader>e :Ex<CR>
 nnoremap <Leader>q :q<CR>
