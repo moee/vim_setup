@@ -14,7 +14,7 @@ The vimrc will change the leader key to `<Space>`. The following custom mappings
 * `<Space>l` Restore session
 * `<Space>mf` Add `:Mru ` in command line which allows you to specify a filter before hitting enter
 * `<Space>mr` Directly open most recently used files list
-* `<Space>t` Open new tab
+* `<Space>t` Open new tab and explore the current file's directory
 * `<Space>g` Toggle taglist
 * `<Space><NUM>` Go to tab <NUM> (works with numbers from 1 to 7)
 * `<Space>q` Quit
