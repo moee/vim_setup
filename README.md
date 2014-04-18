@@ -6,7 +6,7 @@ Scripts to set up my vim environment on any machine. Right now it installs the f
 * [Most Recently Used](https://github.com/yegappan/mru)
 * [taglist.vim](https://github.com/vim-scripts/taglist.vim)
 * [pathogen.vim](https://github.com/tpope/vim-pathogen)
-* [SnipMate](https://github.com/garbas/vim-snipmate) along with some custom snippets
+* [SnipMate](https://github.com/garbas/vim-snipmate) - along with some [pre-defined](https://github.com/honza/vim-snippets/tree/master/snippets) and [custom](bundle/mysnippets/snippets) snippets
 
 The vimrc will change the leader key to `<Space>`. The following custom mappings are defined:
 
