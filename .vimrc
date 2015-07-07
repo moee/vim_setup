@@ -47,3 +47,6 @@ nnoremap <Leader>7 7gt<CR>
 if filereadable(".vim.custom")
     so .vim.custom
 endif
+
+filetype plugin indent on
+syntax on
