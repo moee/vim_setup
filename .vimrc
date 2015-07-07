@@ -2,6 +2,7 @@ execute pathogen#infect()
 
 set tags=tags;/
 set tabstop=4 shiftwidth=4 expandtab 
+set ruler
 
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP colorcolumn=80
 autocmd FileType python set colorcolumn=80
