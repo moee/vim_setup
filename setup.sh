@@ -74,7 +74,7 @@ clone_or_pull https://github.com/garbas/vim-snipmate.git
 clone_or_pull https://github.com/honza/vim-snippets.git
 
 info "installing custom snippets"
-cp $SCRIPTPATH/bundle/mysnippets $HOME/.vim/bundle -R && success
+cp -R $SCRIPTPATH/bundle/mysnippets $HOME/.vim/bundle && success
 
 info "installing filetype.vim"
 cp $SCRIPTPATH/filetype.vim $HOME/.vim/filetype.vim && success
