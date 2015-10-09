@@ -28,9 +28,17 @@ nnoremap <Leader>5 5gt<CR>
 nnoremap <Leader>6 6gt<CR>
 nnoremap <Leader>7 7gt<CR>
 
-if filereadable(".vim.custom")
-    so .vim.custom
+if filereadable(expand("~/.vim.custom"))
+	so ~/.vim.custom
 endif
+
+function! MoeeExploreDir(dir)
+    if isdirectory(expand('%:p'))
+		execute 'edit ' . a:dir
+    else
+		execute 'tabe ' . a:dir
+    endif
+endfunction
 
 filetype plugin indent on
 syntax on
