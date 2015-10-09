@@ -47,6 +47,9 @@ info "installing required packages"
 if [ $(whereis apt-get | wc -l) -ne 0 ]; then
 	sudo apt-get install -y exuberant-ctags curl
 fi
+if [ -f /usr/local/bin/brew ]; then
+	brew install ctags
+fi
 
 info "installing mru plugin"
 
