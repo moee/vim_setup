@@ -25,23 +25,27 @@ if [ -z $HOME ]; then
     exit 1 
 fi
 
-PLUGINDIR=$HOME/.vim/plugin
 SCRIPTPATH=$( cd $(dirname $0) ; pwd -P )
+VIMDIR=$HOME/.vim
+PLUGINDIR=$VIMDIR/plugin
+LIBRARYDIR=$VIMDIR/library
 
 if [ ! -z $1 ] && [ $1 == "-f" ] && [ -d $HOME/.vim ]; then
     info "Force removal of ~/.vim directory"
-    rm -rf $HOME/.vim/*
+    rm -rf $VIMDIR/*
 fi
 
-if [ ! -d $PLUGINDIR ]; then
-    info "Directory $PLUGINDIR does not exist. Creating it."
-    mkdir -p $PLUGINDIR
-fi
+for DIR in $PLUGINDIR $LIBRARYDIR; do
+	if [ ! -d $DIR ]; then
+		info "Directory $DIR does not exist. Creating it."
+		mkdir -p $DIR
+	fi
 
-if [ ! -d $PLUGINDIR ]; then
-    error "Directory $PLUGINDIR still does not exist. Giving up."
-    exit 1
-fi
+	if [ ! -d $DIR ]; then
+		error "Directory $DIR still does not exist. Giving up."
+		exit 1
+	fi
+done
 
 info "installing required packages"
 if [ $(whereis apt-get | wc -l) -ne 0 ]; then
@@ -53,11 +57,9 @@ fi
 
 info "installing mru plugin"
 
-if [ -d mru.vim ]; then
-    rm -rf mru.vim
-fi
-
-(git clone https://github.com/vim-scripts/mru.vim && cp mru.vim/plugin/mru.vim $PLUGINDIR/mru.vim && success) || error
+cd $LIBRARYDIR
+clone_or_pull https://github.com/vim-scripts/mru.vim
+cp $LIBRARYDIR/mru.vim/plugin/mru.vim $PLUGINDIR/mru.vim || error
 
 info "installing pathogem.vim"
 mkdir -p ~/.vim/autoload ~/.vim/bundle 
