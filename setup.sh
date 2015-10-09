@@ -44,7 +44,9 @@ if [ ! -d $PLUGINDIR ]; then
 fi
 
 info "installing required packages"
-sudo apt-get install -y exuberant-ctags curl
+if [ $(whereis apt-get | wc -l) -ne 0 ]; then
+	sudo apt-get install -y exuberant-ctags curl
+fi
 
 info "installing mru plugin"
 
