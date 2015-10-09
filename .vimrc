@@ -13,6 +13,7 @@ autocmd BufRead,BufNewFile *.yml setl sw=2 sts=2 et
 autocmd BufWritePre * :%s/\s\+$//e
 
 let mapleader = "\<Space>"
+let Tlist_GainFocus_On_ToggleOpen = 1
 nnoremap <Leader>mf :Mru 
 nnoremap <Leader>mr :Mru<CR> 
 nnoremap <Leader>t :tabe %:p:h<CR>
