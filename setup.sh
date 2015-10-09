@@ -3,9 +3,9 @@
 # Attention: This file will overwrite your vim settings without asking.
 # You have been warned.
 
-success () { echo -e "\e[00;32mSuccess\e[00m"; }
-error () { echo -e "\e[00;31mError\e[00m"; }
-info () { echo -e "\e[00;34m$1\e[00m"; }
+success () { echo -e "\x1B[00;32mSuccess\x1B[00m"; }
+error () { echo -e "\x1B[00;31mError\x1B[00m"; }
+info () { echo -e "\x1B[00;34m$1\x1B[00m"; }
 
 clone_or_pull () {
     DIRNAME=$(echo $1 | sed "s/https:\/\/github.com\/.*\///g" | sed "s/\.git//g")
