@@ -51,7 +51,7 @@ fi
 info "installing mru plugin"
 
 if [ -d mru.vim ]; then
-    rm mru.vim -rf
+    rm -rf mru.vim
 fi
 
 (git clone https://github.com/vim-scripts/mru.vim && cp mru.vim/plugin/mru.vim $PLUGINDIR/mru.vim && success) || error
