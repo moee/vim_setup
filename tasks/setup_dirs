@@ -1,0 +1,14 @@
+for DIR in $PLUGINDIR $LIBRARYDIR $AUTOLOADDIR $DOCDIR $BUNDLEDIR; do
+    if [ -d  $DIR ]; then
+        echo "Directory $DIR already exists. Skipping"
+        continue
+    fi
+
+    echo "Directory $DIR does not exist. Creating it."
+    mkdir -p $DIR
+
+	if [ ! -d $DIR ]; then
+		zdsp_error "Directory $DIR still does not exist. Giving up."
+		exit 1
+	fi
+done

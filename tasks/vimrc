@@ -1,0 +1,1 @@
+cp $ZDSP_BASE_DIR/.vimrc $VIMDIR/.vimrc

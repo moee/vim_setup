@@ -1,0 +1,7 @@
+cd $BUNDLEDIR
+curl -L https://github.com/tomtom/tlib_vim/archive/1.14.tar.gz | tar xvz > /dev/null
+git clone --depth 1 --branch master https://github.com/MarcWeber/vim-addon-mw-utils.git
+curl -L https://github.com/garbas/vim-snipmate/archive/v0.87.tar.gz | tar xvz > /dev/null
+git clone --depth 1 --branch master https://github.com/honza/vim-snippets.git
+
+cp -R $ZDSP_BASE_DIR/bundle/mysnippets $BUNDLEDIR

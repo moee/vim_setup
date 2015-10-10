@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-
 INSTALLDIR=$(mktemp -t -d vim_setup.XXXXXX)
-git clone https://github.com/moee/vim_setup.git $INSTALLDIR
-cd $INSTALLDIR
-$INSTALLDIR/setup.sh
+git clone https://github.com/moee/vim_setup.git $INSTALLDIR/vim_setup
+curl -LsS https://raw.githubusercontent.com/moee/shellprovisioner/master/zdsp > $INSTALLDIR/vim_setup/zdsp && chmod +x $INSTALLDIR/vim_setup/zdsp
+cd $INSTALLDIR/vim_setup
+./zdsp vim
 rm -rf $INSTALLDIR

@@ -1,0 +1,12 @@
+export VIMDIR=~/.vim 
+export PLUGINDIR=$VIMDIR/plugin
+export LIBRARYDIR=$VIMDIR/library
+export BUNDLEDIR=$VIMDIR/bundle
+export AUTOLOADDIR=$VIMDIR/autoload
+export DOCDIR=$VIMDIR/doc
+remove_vim_dir
+setup_dirs
+pathogen
+taglist
+snipmate
+vimrc

@@ -1,0 +1,4 @@
+cd $LIBRARYDIR
+git clone https://github.com/vim-scripts/taglist.vim.git
+cp $LIBRARYDIR/taglist.vim/plugin/taglist.vim $PLUGINDIR/taglist.vim
+cp $LIBRARYDIR/taglist.vim/doc/taglist.txt $DOCDIR/taglist.txt
