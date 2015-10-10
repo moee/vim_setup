@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+INSTALLDIR=~/vim_setup
+if [ -d $INSTALLDIR ]; then
+    rm -rf $INSTALLDIR
+fi
+git clone https://github.com/moee/vim_setup.git $INSTALLDIR
+cd $INSTALLDIR
+$INSTALLDIR/setup.sh
+rm -rf $INSTALLDIR
