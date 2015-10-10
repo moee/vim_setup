@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
-INSTALLDIR=~/vim_setup
-if [ -d $INSTALLDIR ]; then
-    rm -rf $INSTALLDIR
-fi
+INSTALLDIR=$(mktemp -t -d vim_setup.XXXXXX)
 git clone https://github.com/moee/vim_setup.git $INSTALLDIR
 cd $INSTALLDIR
 $INSTALLDIR/setup.sh
