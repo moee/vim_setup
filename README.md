@@ -1,5 +1,4 @@
-vim_setup
-=========
+# vim_setup
 
 Scripts to set up my vim environment on any machine. Right now it installs the following scripts and plugins:
 
@@ -10,8 +9,6 @@ Scripts to set up my vim environment on any machine. Right now it installs the f
 
 The vimrc will change the leader key to `<Space>`. The following custom mappings are defined:
 
-* `<Space>s` Save session (to ~/.vim/session)
-* `<Space>l` Restore session
 * `<Space>mf` Add `:Mru ` in command line which allows you to specify a filter before hitting enter
 * `<Space>mr` Directly open most recently used files list
 * `<Space>t` Open new tab and explore the current file's directory
@@ -20,9 +17,8 @@ The vimrc will change the leader key to `<Space>`. The following custom mappings
 * `<Space>q` Quit
 * `<Space>e` Explore Directory
 
-Installation
-------------
+## Installation
 
 **Attention: This will overwrite your .vimrc without asking! You have been warned.**
 
-`git clone https://github.com/moee/vim_setup.git ~/vim_setup && cd ~/vim_setup && ./setup.sh && cd .. && rm -rf vim_setup`
+`bash <(curl -LsS https://raw.github.com/moee/vim_setup/master/install)`
